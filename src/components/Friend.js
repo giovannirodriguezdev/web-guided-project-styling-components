@@ -1,12 +1,31 @@
 import React from 'react'
+import styled from 'styled-components';
+
+const StyledFriend = styled.div`
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 2px solid white;
+
+  
+  background-color: ${pr => pr.theme.primaryColor};
+  color: ${pr => pr.theme.white};
+
+  transition: all .02s ease-in-out;
+  &:hover {
+    transition: all .o2s ease-in-out;
+    background-color: ${pr => pr.theme.secondaryColor};
+  }
+`
 
 export default function Friend({ info, action }) {
   return (
-    <div className='friend'>
+    <StyledFriend className='friend'>
       {info.name}
       <button onClick={() => action(info.id)}>
         See details
       </button>
-    </div>
+    </StyledFriend>
   )
 }
